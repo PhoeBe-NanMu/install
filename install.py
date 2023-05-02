@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-url_prefix = 'http://fishros.com/install/install1s/'
+url_prefix = 'https://raw.githubusercontent.com/PhoeBe-NanMu/install/master/'
 
 base_url = url_prefix+'tools/base.py'
 
