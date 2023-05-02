@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-url_prefix = 'https://raw.githubusercontent.com/PhoeBe-NanMu/install/master/'
+url_prefix = 'https://raw.fastgit.org/PhoeBe-NanMu/install/master/'
 
 base_url = url_prefix+'tools/base.py'
 
