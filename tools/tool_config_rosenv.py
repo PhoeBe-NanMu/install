@@ -24,7 +24,7 @@ class Tool(BaseTool):
 
         # check and append source 
         result = CmdTask("ls /opt/ros/*/setup.bash", 0).run()
-        bashrc_result = CmdTask("ls ～/.bashrc", 0).run() 
+        bashrc_result = CmdTask("ls ~/.bashrc", 0).run() 
         if bashrc_result[0]!=0:  bashrc_result = CmdTask("ls /root/.bashrc", 0).run() 
         if len(result[1])>1:
             PrintUtils.print_info('检测到系统有多个ROS环境,已为你生成启动选择,修改~/.bashrc可关闭')
