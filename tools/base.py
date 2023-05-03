@@ -939,6 +939,10 @@ class CmdTask(Task):
         if self.os_command:
             return self._os_command(self.command,self.timeout,cwd=self.cwd)
         return self.__run_command(self.command,self.timeout,cwd=self.cwd)
+    
+    def run_all(self):
+        PrintUtils.print_info("\033[32mRun CMD Task:[{}]".format(self.command))
+        return self.__run_command(self.command,self.timeout,cwd=self.cwd)
 
 
 
