@@ -27,7 +27,9 @@ class Tool(BaseTool):
         is_docker_nv = CmdTask("[[ -f /.dockerenv ]] && echo 1 || echo 0 ").run()
         print(is_docker_nv[1][0])
         print(is_docker_nv[1])
+        print(len(is_docker_nv[1]))
         print(is_docker_nv[1])
+        if is_docker_nv[1] == ['0'] : print(2)
         if is_docker_nv[1][0]=='0':  bashrc_result = CmdTask("ls /home/*/.bashrc", 0).run()
         if is_docker_nv[1][0]=='1':  bashrc_result = CmdTask("ls /root/.bashrc", 0).run() 
  
