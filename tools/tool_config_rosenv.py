@@ -26,6 +26,8 @@ class Tool(BaseTool):
         result = CmdTask("ls /opt/ros/*/setup.bash", 0).run()
         is_docker_nv = CmdTask("[[ -f /.dockerenv ]] && echo 1 || echo 0 ").run()
         print(is_docker_nv[1][0])
+        print(is_docker_nv[1][0])
+        print(is_docker_nv[1][0])
         print(is_docker_nv[1])
         print(len(is_docker_nv[1]))
         print(is_docker_nv[1])
