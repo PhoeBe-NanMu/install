@@ -24,7 +24,7 @@ class Tool(BaseTool):
 
         # check and append source 
         result = CmdTask("ls /opt/ros/*/setup.bash", 0).run()
-        is_docker_nv = CmdTask("[[ -f /.dockerenv ]] && echo 1 || echo 0 ", 0).run_all()
+        is_docker_nv = CmdTask("ls /.dockerenv && echo 1 || echo 0 ", 0).run_all()
         print(is_docker_nv[1][0])
         print(is_docker_nv[1][0])
         print(is_docker_nv[1][0])
