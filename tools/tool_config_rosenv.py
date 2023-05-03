@@ -24,6 +24,12 @@ class Tool(BaseTool):
 
         # check and append source 
         result = CmdTask("ls /opt/ros/*/setup.bash", 0).run()
+        is_docker_nv = CmdTask("ls -alh /.dockerenv", 0).run()
+        if is_docker_nv[0]!=0:  bashrc_result = CmdTask("ls /home/*/.bashrc", 0).run()
+            else:
+                bashrc_result = CmdTask("ls /root/.bashrc", 0).run() 
+                
+            
         bashrc_result = CmdTask("ls ~/.bashrc", 0).run() 
         if bashrc_result[0]!=0:  bashrc_result = CmdTask("ls /root/.bashrc", 0).run() 
         if len(result[1])>1:
