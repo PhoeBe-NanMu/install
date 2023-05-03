@@ -34,7 +34,7 @@ class Tool(BaseTool):
         if is_docker_nv[1] == ['0'] : print(2)
         if is_docker_nv[1][0]=='0':  bashrc_result = CmdTask("ls /home/*/.bashrc", 0).run()
         if is_docker_nv[1][0]=='1':  bashrc_result = CmdTask("ls /root/.bashrc", 0).run() 
- 
+        print(result[1])
         if len(result[1])>1:
             PrintUtils.print_info('检测到系统有多个ROS环境,已为你生成启动选择,修改~/.bashrc可关闭')
             data = get_source_command(result[1])
