@@ -23,7 +23,7 @@ class RosVersions:
         RosVersion('galactic',  'ROS2', RosVersion.STATUS_LTS, ['osrf/ros:galactic-desktop'],["ros:galactic"]),
         RosVersion('melodic', 'ROS1', RosVersion.STATUS_LTS, ['osrf/ros:melodic-desktop-full'],["ros:melodic"]),
         RosVersion('rolling',  'ROS2', RosVersion.STATUS_LTS, ['osrf/ros:rolling-desktop-full'],["ros:rolling"]),
-        RosVersion('kinetic', 'ROS1', RosVersion.STATUS_EOL, ['osrf/ros:kinetic-desktop-full'],["ros:kinetic"]),
+        RosVersion('kinetic', 'ROS1', RosVersion.STATUS_EOL, ['fishros2/ros:kinetic-desktop-full'],["ros:kinetic"]),
         RosVersion('eloquent',  'ROS2', RosVersion.STATUS_EOL, ['osrf/ros:eloquent-desktop'],["ros:eloquent"]),
         RosVersion('dashing',  'ROS2', RosVersion.STATUS_EOL, ['osrf/ros:dashing-desktop'],["ros:dashing"]),
         RosVersion('crystal',  'ROS2', RosVersion.STATUS_EOL, ['osrf/ros:crystal-desktop'],["ros:crystal"]),
