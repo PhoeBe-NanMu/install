@@ -40,24 +40,24 @@ class Tool(BaseTool):
         # CmdTask('git clone https://gitee.com/yuzi99url/cartographer_ros.git',path='cartographer_ws/src').run()
         # CmdTask('git clone https://gitee.com/yuzi99url/cartographer.git',path='cartographer_ws/src').run()
 
-        # CmdTask('cd  cartographer_ws/').run()
+        CmdTask('cd  cartographer_ws/').run()
         
         # 3
         run_tool_file('tools.tool_config_rosdep')
         CmdTask('rosdepc update --include-eol-distros').run()
-        CmdTask('rosdepc install -r --from-paths src --ignore-src --rosdistro={} -y'.format(ros_version),path='cartographer_ws').run()
+        CmdTask('rosdepc install -r --from-paths src --ignore-src --rosdistro={} -y'.format(ros_version)).run()
         # 4
         CmdTask("sudo apt-get remove ros-{}-abseil-cpp -y".format(ros_version)).run()
         FileUtils.find_replace("src/cartographer/scripts/install_abseil.sh", "https://github.com/abseil/abseil-cpp.git", "https://gitee.com/yuzi99url/abseil-cpp.git")
-        CmdTask('bash src/cartographer/scripts/install_abseil.sh',path='cartographer_ws').run()
+        CmdTask('bash src/cartographer/scripts/install_abseil.sh').run()
         # 5
         CmdTask("sudo mv /usr/bin/protoc /usr/bin/protoc.bk").run()
         CmdTask("sudo ln -s /usr/local/bin/protoc /usr/bin/protoc").run()
         FileUtils.find_replace("src/cartographer/scripts/install_proto3.sh", "https://github.com/google/protobuf.git", "https://gitee.com/yuzi99url/protobuf.git")
-        CmdTask('bash src/cartographer/scripts/install_proto3.sh',path='cartographer_ws').run()
+        CmdTask('bash src/cartographer/scripts/install_proto3.sh').run()
         # 6
-        CmdTask("catkin_make_isolated --install --use-ninja",'cartographer_ws').run()
-        CmdTask("sudo chmod -R 777 cartographer_ws").run()
+        CmdTask("catkin_make_isolated --install --use-ninja").run()
+        CmdTask("sudo chmod -R 777 ../cartographer_ws").run()
 
     def run(self):
         self.install_docker()
