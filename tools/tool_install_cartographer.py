@@ -36,11 +36,10 @@ class Tool(BaseTool):
         # 1
         CmdTask('sudo apt install ninja-build stow git -y').run()
         # 2
-        # CmdTask('mkdir -p cartographer_ws/src').run()
-        # CmdTask('git clone https://gitee.com/yuzi99url/cartographer_ros.git',path='cartographer_ws/src').run()
-        # CmdTask('git clone https://gitee.com/yuzi99url/cartographer.git',path='cartographer_ws/src').run()
+        CmdTask('mkdir -p cartographer_ws/src').run()
+        CmdTask('git clone https://gitee.com/yuzi99url/cartographer_ros.git',path='cartographer_ws/src').run()
+        CmdTask('git clone https://gitee.com/yuzi99url/cartographer.git',path='cartographer_ws/src').run()
 
-        CmdTask('cd cartographer_ws').run()
         # 3
         run_tool_file('tools.tool_config_rosdep')
         CmdTask('rosdepc update --include-eol-distros').run()
